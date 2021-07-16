@@ -7,18 +7,18 @@ namespace SF_13._6_2
 {
     class Program
     {
-        static Text Text = new Text(@"C:/Users/Savinykh/Desktop/С/Text1.txt");
+        static TextWorker TextWorker = new TextWorker(@"C:/Users/Savinykh/Desktop/С/Text1.txt");
 
 
         static void Main(string[] args)
         {
 
-            Text.GetTextToString();
-            Text.PutUniqueWordsToDictionary(3); // аргументом отсекаем предлоги, местоимения, наречия по длине слова (о - учитывает всё)
+            TextWorker.GetTextToString();
+            TextWorker.PutUniqueWordsToDictionary(3); // аргументом отсекаем предлоги, местоимения, наречия по длине слова (о - учитывает всё)
            
             CountWords();
 
-            PrintResult(Text.UniqueWordDictionary.OrderBy(x => -x.Value).ToDictionary(x => x.Key, x => x.Value));
+            PrintResult(TextWorker.UniqueWordDictionary.OrderBy(x => -x.Value).ToDictionary(x => x.Key, x => x.Value));
 
 
             Console.ReadKey();
@@ -27,8 +27,8 @@ namespace SF_13._6_2
 
         static void CountWords()
         {
-            foreach (var word in Text.EntireText)
-                if (Text.UniqueWordDictionary.ContainsKey(word)) Text.UniqueWordDictionary[word]++;
+            foreach (var word in TextWorker.EntireText)
+                if (TextWorker.UniqueWordDictionary.ContainsKey(word)) TextWorker.UniqueWordDictionary[word]++;
         }
 
 

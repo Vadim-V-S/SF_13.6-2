@@ -5,13 +5,13 @@ using System.IO;
 
 namespace SF_13._6_2
 {
-    class Text
+    class TextWorker
     {
         public string[] EntireText;
         string path;
         public Dictionary<string, int> UniqueWordDictionary;
 
-        public Text( string path)
+        public TextWorker( string path)
         {
             this.path = path;
         }
